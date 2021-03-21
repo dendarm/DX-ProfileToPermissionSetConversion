@@ -29,20 +29,6 @@ Clone the project or download the .zip [link](https://github.com/dendarm/DX-Prof
 
 If you downloaded the zip, unzip it in an note down where you stored it.
 
-Open Command Prompt on windows and enter:
-
- ```bash
-cd "pathToUnzippedFolder"
-```
-
-where pathToUnzipped folder is the location to which you unzipped the contents.
-
-Eg.
-
- ```bash
-cd "C:\Users\JohnDoe\Downloads\DX-ProfileToPermissionSetConversion"
-```
-
 Navigate to the python subfolder and double click on runAll.bat
 
 The runAll.bat file in /python executes the individual python scripts in sequence. Each script can be launched individually, but if you mess with the order in which they need to be run, things will break.
