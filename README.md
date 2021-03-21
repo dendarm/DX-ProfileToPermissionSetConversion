@@ -25,6 +25,24 @@ This code is just a first working version, and I'm sure it can be improved in ma
 
 This should be run from a DX project! [How to create a DX project](https://trailhead.salesforce.com/en/content/learn/projects/develop-app-with-salesforce-cli-and-source-control/create-salesforce-dx-project)
 
+Clone the project or download the .zip [link](https://github.com/dendarm/DX-ProfileToPermissionSetConversion/archive/refs/heads/main.zip).
+
+If you downloaded the zip, unzip it in an note down where you stored it.
+
+Open Command Prompt on windows and enter:
+
+ ```bash
+cd "pathToUnzippedFolder"
+```
+
+where pathToUnzipped folder is the location to which you unzipped the contents.
+
+Eg.
+
+ ```bash
+cd "C:\Users\JohnDoe\Downloads\DX-ProfileToPermissionSetConversion"
+```
+
 Open a command line from the folder to which you download this project and run:
 
 ```bash
