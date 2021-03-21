@@ -1,4 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <config>
   <Version>1</Version>
+  <permissionsSetClean>
+  	<name>layoutAssignments</name>
+  	<name>recordTypeVisibilities</name>
+  	<name>tabVisibilities</name>
+  	<name>userPermissions</name>
+  	<name>custom</name>
+  	<name>userLicense</name>
+  	<name>applicationVisibilities</name>
+  </permissionsRemove>
 </config>
