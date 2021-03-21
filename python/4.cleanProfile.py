@@ -50,53 +50,13 @@ for profile in profileList:
     tree = lxml.etree.parse(profilePath + fileName, parser)
     root = tree.getroot()
 
-    for fieldRead in tree.xpath('//sf:fieldPermissions/sf:readable[../sf:readable/text()="true"]', namespaces=NS):
-        fieldRead.text = "false"
+    for profileClean in configFile.xpath('//profileClean/name/text()'):
 
-    for fieldEdit in tree.xpath('//sf:fieldPermissions/sf:editable[../sf:editable/text()="true"]', namespaces=NS):
-        fieldEdit.text = "false"
+        for cleanElement in tree.xpath(profileClean, namespaces=NS):
+            print(cleanElement)
+            cleanElement.text = "false"
 
-    for objCreate in tree.xpath('//sf:objectPermissions/sf:allowCreate[../sf:allowCreate/text()="true"]', namespaces=NS):
-        objCreate.text = "false"
-        print("object create permissions set to false")
-
-    for objDelete in tree.xpath('//sf:objectPermissions/sf:allowDelete[../sf:allowDelete/text()="true"]', namespaces=NS):
-        objDelete.text = "false"
-        print("object delete permissions set to false")
-
-    for objEdit in tree.xpath('//sf:objectPermissions/sf:allowEdit[../sf:allowEdit/text()="true"]', namespaces=NS):
-        objEdit.text = "false"
-        print("object edit permissions set to false")
-
-    for objRead in tree.xpath('//sf:objectPermissions/sf:allowRead[../sf:allowRead/text()="true"]', namespaces=NS):
-        objRead.text = "false"
-        print("object read permissions set to false")
-
-    for objModAll in tree.xpath('//sf:objectPermissions/sf:modifyAllRecords[../sf:modifyAllRecords/text()="true"]', namespaces=NS):
-        objModAll.text = "false"
-        print("object modify all permissions set to false")
-
-    for objViewAll in tree.xpath('//sf:objectPermissions/sf:viewAllRecords[../sf:viewAllRecords/text()="true"]', namespaces=NS):
-        objViewAll.text = "false"
-        print("object view all permissions set to false")
-
-    for classAccess in tree.xpath('//sf:classAccesses/sf:enabled[../sf:enabled/text()="true"]', namespaces=NS):
-        classAccess.text = "false"
-        print("class access permissions set to false")
-
-    for pageAccess in tree.xpath('//sf:pageAccesses/sf:enabled[../sf:enabled/text()="true"]', namespaces=NS):
-        pageAccess.text = "false"
-        print("VF page permissions set to false")
-
-    for metadataAccess in tree.xpath('//sf:customMetadataTypeAccesses/sf:enabled[../sf:enabled/text()="true"]', namespaces=NS):
-        metadataAccess = "false"
-        print("Custom Metadata access set to false")
-
-    for customSettingAccess in tree.xpath('//sf:customSettingAccesses/sf:enabled[../sf:enabled/text()="true"]', namespaces=NS):
-        customSettingAccess = "false"
-        print("Custom Settings access set to false")
-
-# Write back to the XML file
-tree.write(profilePath + fileName, pretty_print=True, encoding='UTF-8', xml_declaration=True)
+    # Write back to the XML file
+    tree.write(profilePath + fileName, pretty_print=True, encoding='UTF-8', xml_declaration=True)
 
 

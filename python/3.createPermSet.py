@@ -88,32 +88,17 @@ for profile in profileList:
     for rootElem in permTree.xpath("//sf:Profile" , namespaces=NS):
         rootElem.tag = "PermissionSet"
 
-    appVisibilities = permTree.xpath('//sf:applicationVisibilities', namespaces=NS)
+    for cleanElements in configFile.xpath("//permissionsSetClean/name/text()"):
 
-    for appVis in appVisibilities:
-        appVis.getparent().remove(appVis)
+        print(cleanElements)
 
-    layoutAssignments = permTree.xpath('//sf:layoutAssignments', namespaces=NS)
+        xPath = "//sf:" +cleanElements
 
-    for layoutAssignment in layoutAssignments:
-        layoutAssignment.getparent().remove(layoutAssignment)
+        print(xPath)
 
-    recordTypeVisibilities = permTree.xpath('//sf:recordTypeVisibilities', namespaces=NS)
-
-    for recordTypeVisibility in recordTypeVisibilities:
-        recordTypeVisibility.getparent().remove(recordTypeVisibility)
-
-    for tabVisibility in permTree.xpath('//sf:tabVisibilities', namespaces=NS):
-        tabVisibility.getparent().remove(tabVisibility)
-
-    for userPermission in permTree.xpath('//sf:userPermissions', namespaces=NS):
-        userPermission.getparent().remove(userPermission)
-
-    for custom in permTree.xpath('//sf:custom', namespaces = NS):
-        custom.getparent().remove(custom)
-
-    for userLicense in permTree.xpath('//sf:userLicense', namespaces=NS):
-        userLicense.getparent().remove(userLicense)
+        for permissions in permTree.xpath(xPath, namespaces = NS):
+            print(permissions)
+            permissions.getparent().remove(permissions)
 
 
     # Save the newly created Permission Set

@@ -17,6 +17,7 @@ savePath = "../transform/main/default/profiles/"
 fileName = inputFileName + ".profile-meta.xml"
 fileNameFullProfile = inputFileNameFullProfile + ".profile-meta.xml"
 fileNamePlatformProfile = inputFileNamePlatformProfile + ".profile-meta.xml"
+configPath = "../config/config.xml"
 
 # Parse XML files
 fxml = ET.parse("../force-app/main/default/profiles/" + fileName, parser)
@@ -48,25 +49,13 @@ if inputFileNamePlatformProfile:
 
 # Remove user permission that are not compatible with Platform licences
     
-    for uTransferAnyCase in fxml.xpath('//sf:userPermissions[sf:name/text()="TransferAnyCase"]', namespaces=NS):
-        uTransferAnyCase.getparent().remove(uTransferAnyCase)
-        print("TransferAnyCase removed")
-        
-    for uSendSitRequest in fxml.xpath('//sf:userPermissions[sf:name/text()="SendSitRequests"]', namespaces=NS):
-        uSendSitRequest.getparent().remove(uSendSitRequest)
-        print("SendSitRequests removed")
+    for cleanUserPermissions in config.xpath("//userPermissionClean/name/text()"):
 
-    for uLightningConsole in fxml.xpath('//sf:userPermissions[sf:name/text()="LightningConsoleAllowedForUser"]', namespaces=NS):
-        uLightningConsole.getparent().remove(uLightningConsole)
-        print("LightningConsoleAllowedForUser removed")
+        xPath = '//sf:userPermissions[sf:name/text()= "' +cleanUserPermissions + '"]'
 
-    for uSubmitMacros in fxml.xpath('//sf:userPermissions[sf:name/text()="SubmitMacrosAllowed"]', namespaces=NS):
-        uSubmitMacros.getparent().remove(uSubmitMacros)
-        print("SubmitMacrosAllowed removed")
-
-    for uEditCaseComments in fxml.xpath('//sf:userPermissions[sf:name/text()="EditCaseComments"]', namespaces=NS):
-        uEditCaseComments.getparent().remove(uEditCaseComments)
-        print("EditCaseComments removed")
+        for userPermission in fxml.xpath(xPath, namespaces = NS):
+            print(cleanUserPermissions + " removed")
+            userPermission.getparent().remove(userPermission)
 
 
     platProfile = ET.Element("platformProfile")

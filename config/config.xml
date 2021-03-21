@@ -2,12 +2,34 @@
 <config>
   <Version>1</Version>
   <permissionsSetClean>
-  	<name>layoutAssignments</name>
-  	<name>recordTypeVisibilities</name>
-  	<name>tabVisibilities</name>
-  	<name>userPermissions</name>
-  	<name>custom</name>
-  	<name>userLicense</name>
-  	<name>applicationVisibilities</name>
-  </permissionsRemove>
+    <name>layoutAssignments</name>
+    <name>recordTypeVisibilities</name>
+    <name>tabVisibilities</name>
+    <name>userPermissions</name>
+    <name>custom</name>
+    <name>userLicense</name>
+    <name>applicationVisibilities</name>
+    <name>userLicense</name>
+    <name>custom</name>
+  </permissionsSetClean>
+  <userPermissionClean>
+    <name>TransferAnyCase</name>
+    <name>SendSitRequests</name>
+    <name>LightningConsoleAllowedForUser</name>
+    <name>SubmitMacrosAllowed</name>
+    <name>EditCaseComments</name>
+  </userPermissionClean>
+  <profileClean>
+    <name>//sf:fieldPermissions/sf:readable[../sf:readable/text()="true"]</name>
+    <name>//sf:fieldPermissions/sf:editable[../sf:editable/text()="true"]</name>
+    <name>//sf:objectPermissions/sf:allowCreate[../sf:allowCreate/text()="true"]</name>
+    <name>//sf:objectPermissions/sf:allowDelete[../sf:allowDelete/text()="true"]</name>
+    <name>//sf:objectPermissions/sf:allowRead[../sf:allowRead/text()="true"]</name>
+    <name>//sf:objectPermissions/sf:modifyAllRecords[../sf:modifyAllRecords/text()="true"]</name>
+    <name>//sf:objectPermissions/sf:viewAllRecords[../sf:viewAllRecords/text()="true"]</name>
+    <name>//sf:classAccesses/sf:enabled[../sf:enabled/text()="true"]</name>
+    <name>//sf:pageAccesses/sf:enabled[../sf:enabled/text()="true"]</name>
+    <name>//sf:customMetadataTypeAccesses/sf:enabled[../sf:enabled/text()="true"]</name>
+    <name>//sf:customSettingAccesses/sf:enabled[../sf:enabled/text()="true"]</name>
+  </profileClean>
 </config>
