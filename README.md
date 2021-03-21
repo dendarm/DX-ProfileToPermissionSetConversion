@@ -46,7 +46,7 @@ cd "C:\Users\JohnDoe\Downloads\DX-ProfileToPermissionSetConversion"
 Open a command line from the folder to which you download this project and run:
 
 ```bash
-../python.runAll.bat
+../python/runAll.bat
 ```
 
 or navigate to the python subfolder and double click on runAll.bat
