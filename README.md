@@ -43,13 +43,7 @@ Eg.
 cd "C:\Users\JohnDoe\Downloads\DX-ProfileToPermissionSetConversion"
 ```
 
-Open a command line from the folder to which you download this project and run:
-
-```bash
-../python.runAll.bat
-```
-
-or navigate to the python subfolder and double click on runAll.bat
+Navigate to the python subfolder and double click on runAll.bat
 
 The runAll.bat file in /python executes the individual python scripts in sequence. Each script can be launched individually, but if you mess with the order in which they need to be run, things will break.
 
